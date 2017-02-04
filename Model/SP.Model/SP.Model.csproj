@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4F569840-B877-404A-BD1A-B3C2D966F042}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SP.Model</RootNamespace>
+    <AssemblyName>SP.Model</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Aim.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Aim.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.ActiveRecord, Version=2.1.2.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Framework\Aim.Resources\libs\Castle.ActiveRecord.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=3.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Framework\Aim.Resources\libs\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=2.1.2.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Framework\Aim.Resources\libs\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="PostSharp, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b13fd38b8f9c99d7, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Customed\BeiAn_Project.cs" />
+    <Compile Include="Customed\ChouJin.cs" />
+    <Compile Include="Customed\ChouJinDetail.cs" />
+    <Compile Include="Customed\ChouJinResult.cs" />
+    <Compile Include="Customed\CmpAttendance.cs" />
+    <Compile Include="Customed\CmpAttendanceDetail.cs" />
+    <Compile Include="Customed\DelegateInfo.cs" />
+    <Compile Include="Customed\DeptAttendance.cs" />
+    <Compile Include="Customed\DeptAttendanceDetail.cs" />
+    <Compile Include="Customed\EngineeringQualityReport.cs" />
+    <Compile Include="Customed\EnterpriseAddrBook.cs" />
+    <Compile Include="Customed\ExamineMeeting.cs" />
+    <Compile Include="Customed\ExamineOpinion.cs" />
+    <Compile Include="Customed\ExamineTask.cs" />
+    <Compile Include="Customed\Expert.cs" />
+    <Compile Include="Customed\Invoice.cs" />
+    <Compile Include="Customed\KanChaSheJi.cs" />
+    <Compile Include="Customed\KangZhen_Project.cs" />
+    <Compile Include="Customed\NotePad.cs" />
+    <Compile Include="Customed\Project.cs" />
+    <Compile Include="Customed\ProjectAttendance.cs" />
+    <Compile Include="Customed\ProjectAttendanceDetail.cs" />
+    <Compile Include="Customed\ProjectFile.cs" />
+    <Compile Include="Customed\ProjectUser.cs" />
+    <Compile Include="Customed\QuestionContent.cs" />
+    <Compile Include="Customed\QuestionItem.cs" />
+    <Compile Include="Customed\ReceiveManage.cs" />
+    <Compile Include="Customed\Salary.cs" />
+    <Compile Include="Customed\SalaryAdjust.cs" />
+    <Compile Include="Customed\SalaryStage.cs" />
+    <Compile Include="Customed\ShenChaReport.cs" />
+    <Compile Include="Customed\ShenChaReport_KanCha.cs" />
+    <Compile Include="Customed\ShouKuan.cs" />
+    <Compile Include="Customed\SignRequest.cs" />
+    <Compile Include="Customed\SubProject.cs" />
+    <Compile Include="Customed\SupervisionGuiHua.cs" />
+    <Compile Include="Customed\SupervisionJianBao.cs" />
+    <Compile Include="Customed\SupervisionNotice.cs" />
+    <Compile Include="Customed\SupervisionRiZhi.cs" />
+    <Compile Include="Customed\SupervisionYueBao.cs" />
+    <Compile Include="Customed\WorkLianXi.cs" />
+    <Compile Include="Customed\ZhongShenOpinion_Project.cs" />
+    <Compile Include="EditSensityTreeNodeEntityBase.cs" />
+    <Compile Include="Generated\BeiAn_Project.g.cs" />
+    <Compile Include="Generated\ChouJin.g.cs" />
+    <Compile Include="Generated\ChouJinDetail.g.cs" />
+    <Compile Include="Generated\ChouJinResult.g.cs" />
+    <Compile Include="Generated\CmpAttendance.g.cs" />
+    <Compile Include="Generated\CmpAttendanceDetail.g.cs" />
+    <Compile Include="Generated\DelegateInfo.g.cs" />
+    <Compile Include="Generated\DeptAttendance.g.cs" />
+    <Compile Include="Generated\DeptAttendanceDetail.g.cs" />
+    <Compile Include="Generated\EngineeringQualityReport.g.cs" />
+    <Compile Include="Generated\EnterpriseAddrBook.g.cs" />
+    <Compile Include="Generated\ExamineMeeting.g.cs" />
+    <Compile Include="Generated\ExamineOpinion.g.cs" />
+    <Compile Include="Generated\ExamineTask.g.cs" />
+    <Compile Include="Generated\Expert.g.cs" />
+    <Compile Include="Generated\Invoice.g.cs" />
+    <Compile Include="Generated\KanChaSheJi.g.cs" />
+    <Compile Include="Generated\KangZhen_Project.g.cs" />
+    <Compile Include="Generated\NotePad.g.cs" />
+    <Compile Include="Generated\Project.g.cs" />
+    <Compile Include="Generated\ProjectAttendance.g.cs" />
+    <Compile Include="Generated\ProjectAttendanceDetail.g.cs" />
+    <Compile Include="Generated\ProjectFile.g.cs" />
+    <Compile Include="Generated\ProjectUser.g.cs" />
+    <Compile Include="Generated\QuestionContent.g.cs" />
+    <Compile Include="Generated\QuestionItem.g.cs" />
+    <Compile Include="Generated\ReceiveManage.g.cs" />
+    <Compile Include="Generated\Salary.g.cs" />
+    <Compile Include="Generated\SalaryAdjust.g.cs" />
+    <Compile Include="Generated\SalaryStage.g.cs" />
+    <Compile Include="Generated\SendEmail.g.cs" />
+    <Compile Include="Generated\ShenChaReport.g.cs" />
+    <Compile Include="Generated\ShenChaReport_KanCha.g.cs" />
+    <Compile Include="Generated\ShouKuan.g.cs" />
+    <Compile Include="Generated\SignRequest.g.cs" />
+    <Compile Include="Generated\SubProject.g.cs" />
+    <Compile Include="Generated\SupervisionGuiHua.g.cs" />
+    <Compile Include="Generated\SupervisionJianBao.g.cs" />
+    <Compile Include="Generated\SupervisionNotice.g.cs" />
+    <Compile Include="Generated\SupervisionRiZhi.g.cs" />
+    <Compile Include="Generated\SupervisionYueBao.g.cs" />
+    <Compile Include="Generated\WorkLianXi.g.cs" />
+    <Compile Include="Generated\ZhongShenOpinion_Project.g.cs" />
+    <Compile Include="SPModelBase.cs" />
+    <Compile Include="ModelBase.cs" />
+    <Compile Include="ModelTreeNodeEntityBase.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Framework\Aim.Portal\Aim.Portal.csproj">
+      <Project>{A19B8322-D5A3-42F7-A6AF-0C1B3B4DA7BD}</Project>
+      <Name>Aim.Portal</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
