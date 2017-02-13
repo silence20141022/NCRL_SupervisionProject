@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -22,9 +23,15 @@
     </SccProvider>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
-    <OldToolsVersion>3.5</OldToolsVersion>
-    <UpgradeBackupLocation />
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
     <TargetFrameworkProfile />
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -57,6 +64,10 @@
     <Reference Include="Aspose.Cells">
       <HintPath>..\..\lib\Aspose.Cells.dll</HintPath>
     </Reference>
+    <Reference Include="Aspose.Words, Version=11.3.0.0, Culture=neutral, PublicKeyToken=47d5d0e1ef9d080b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Aspose.Words.dll</HintPath>
+    </Reference>
     <Reference Include="Castle.ActiveRecord, Version=2.1.2.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Castle.ActiveRecord.dll</HintPath>
@@ -65,7 +76,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\log4net.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="Newtonsoft.Json, Version=3.5.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Newtonsoft.Json.dll</HintPath>
@@ -103,38 +113,6 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddressBook\EnterpriseAddrBookEdit.aspx.cs">
-      <DependentUpon>EnterpriseAddrBookEdit.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AddressBook\EnterpriseAddrBookTree.aspx.cs">
-      <DependentUpon>EnterpriseAddrBookTree.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AddressBook\EnterpriseAddrBookTree.aspx.designer.cs">
-      <DependentUpon>EnterpriseAddrBookTree.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="AddressBook\Manage_AddrBookList.aspx.cs">
-      <DependentUpon>Manage_AddrBookList.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AddressBook\Manage_AddrBookList.aspx.designer.cs">
-      <DependentUpon>Manage_AddrBookList.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="AddressBook\Manage_AddrBookTree.aspx.cs">
-      <DependentUpon>Manage_AddrBookTree.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AddressBook\Manage_AddrBookTree.aspx.designer.cs">
-      <DependentUpon>Manage_AddrBookTree.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="AddressBook\Manage_AddrBook_View.aspx.cs">
-      <DependentUpon>Manage_AddrBook_View.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AddressBook\Manage_AddrBook_View.aspx.designer.cs">
-      <DependentUpon>Manage_AddrBook_View.aspx</DependentUpon>
-    </Compile>
     <Compile Include="CommonPages\Data\DataExport.aspx.cs">
       <DependentUpon>DataExport.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -199,6 +177,20 @@
     <Compile Include="CommonPages\Select\ExpertSelect.aspx.designer.cs">
       <DependentUpon>ExpertSelect.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ConsultationManage\BeiAnDengJiBiaoPrint.aspx.cs">
+      <DependentUpon>BeiAnDengJiBiaoPrint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsultationManage\BeiAnDengJiBiaoPrint.aspx.designer.cs">
+      <DependentUpon>BeiAnDengJiBiaoPrint.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultationManage\BeiAnDengJiBiao_Edit.aspx.cs">
+      <DependentUpon>BeiAnDengJiBiao_Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsultationManage\BeiAnDengJiBiao_Edit.aspx.designer.cs">
+      <DependentUpon>BeiAnDengJiBiao_Edit.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ConsultationManage\ChouJinCard.aspx.cs">
       <DependentUpon>ChouJinCard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -235,6 +227,9 @@
     <Compile Include="ConsultationManage\ExamineOpinionEdit.aspx.designer.cs">
       <DependentUpon>ExamineOpinionEdit.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ConsultationManage\ExamineOpinionPrint.aspx.designer.cs">
+      <DependentUpon>ExamineOpinionPrint.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ConsultationManage\ExamineTaskList.aspx.designer.cs">
       <DependentUpon>ExamineTaskList.aspx</DependentUpon>
     </Compile>
@@ -244,26 +239,19 @@
     <Compile Include="ConsultationManage\ExpertList.aspx.designer.cs">
       <DependentUpon>ExpertList.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ConsultationManage\FWJZDY.aspx.cs">
-      <DependentUpon>FWJZDY.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ConsultationManage\FWJZDY.aspx.designer.cs">
-      <DependentUpon>FWJZDY.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ConsultationManage\FWJZSCBG.aspx.cs">
-      <DependentUpon>FWJZSCBG.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ConsultationManage\FWJZSCBG.aspx.designer.cs">
-      <DependentUpon>FWJZSCBG.aspx</DependentUpon>
-    </Compile>
     <Compile Include="ConsultationManage\GroupUser.aspx.cs">
       <DependentUpon>GroupUser.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ConsultationManage\GroupUser.aspx.designer.cs">
       <DependentUpon>GroupUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultationManage\HuiZongBiaoPrint.aspx.cs">
+      <DependentUpon>HuiZongBiaoPrint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsultationManage\HuiZongBiaoPrint.aspx.designer.cs">
+      <DependentUpon>HuiZongBiaoPrint.aspx</DependentUpon>
     </Compile>
     <Compile Include="ConsultationManage\InvoiceEdit.aspx.cs">
       <DependentUpon>InvoiceEdit.aspx</DependentUpon>
@@ -283,6 +271,20 @@
     <Compile Include="ConsultationManage\JKSCDY.aspx.designer.cs">
       <DependentUpon>JKSCDY.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ConsultationManage\KangZhenBiao_Print.aspx.cs">
+      <DependentUpon>KangZhenBiao_Print.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsultationManage\KangZhenBiao_Print.aspx.designer.cs">
+      <DependentUpon>KangZhenBiao_Print.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultationManage\KangZhenOpinion_Edit.aspx.cs">
+      <DependentUpon>KangZhenOpinion_Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsultationManage\KangZhenOpinion_Edit.aspx.designer.cs">
+      <DependentUpon>KangZhenOpinion_Edit.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ConsultationManage\KCSCBG.aspx.cs">
       <DependentUpon>KCSCBG.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -297,8 +299,120 @@
     <Compile Include="ConsultationManage\KCSCDY.aspx.designer.cs">
       <DependentUpon>KCSCDY.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ConsultationManage\ProjectCard.aspx.cs">
+      <DependentUpon>ProjectCard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsultationManage\ProjectCard.aspx.designer.cs">
+      <DependentUpon>ProjectCard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultationManage\ProjectFileZXEdit.aspx.cs">
+      <DependentUpon>ProjectFileZXEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsultationManage\ProjectFileZXEdit.aspx.designer.cs">
+      <DependentUpon>ProjectFileZXEdit.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ConsultationManage\ProjectList.aspx.designer.cs">
       <DependentUpon>ProjectList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultationManage\ShenChaHeGeShuPrint.aspx.cs">
+      <DependentUpon>ShenChaHeGeShuPrint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsultationManage\ShenChaHeGeShuPrint.aspx.designer.cs">
+      <DependentUpon>ShenChaHeGeShuPrint.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultationManage\ShenChaQingKuang_Print.aspx.cs">
+      <DependentUpon>ShenChaQingKuang_Print.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsultationManage\ShenChaQingKuang_Print.aspx.designer.cs">
+      <DependentUpon>ShenChaQingKuang_Print.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultationManage\ShenChaReport_FWJZ.aspx.cs">
+      <DependentUpon>ShenChaReport_FWJZ.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsultationManage\ShenChaReport_FWJZ.aspx.designer.cs">
+      <DependentUpon>ShenChaReport_FWJZ.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultationManage\ShenChaReport_FWJZ_Print.aspx.cs">
+      <DependentUpon>ShenChaReport_FWJZ_Print.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsultationManage\ShenChaReport_FWJZ_Print.aspx.designer.cs">
+      <DependentUpon>ShenChaReport_FWJZ_Print.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultationManage\ShenChaReport_JiKeng.aspx.cs">
+      <DependentUpon>ShenChaReport_JiKeng.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsultationManage\ShenChaReport_JiKeng.aspx.designer.cs">
+      <DependentUpon>ShenChaReport_JiKeng.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultationManage\ShenChaReport_JiKeng_Print.aspx.cs">
+      <DependentUpon>ShenChaReport_JiKeng_Print.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsultationManage\ShenChaReport_JiKeng_Print.aspx.designer.cs">
+      <DependentUpon>ShenChaReport_JiKeng_Print.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultationManage\ShenChaReport_KanCha_Edit.aspx.cs">
+      <DependentUpon>ShenChaReport_KanCha_Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsultationManage\ShenChaReport_KanCha_Edit.aspx.designer.cs">
+      <DependentUpon>ShenChaReport_KanCha_Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultationManage\ShenChaReport_KanCha_Print.aspx.cs">
+      <DependentUpon>ShenChaReport_KanCha_Print.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsultationManage\ShenChaReport_KanCha_Print.aspx.designer.cs">
+      <DependentUpon>ShenChaReport_KanCha_Print.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultationManage\ShenChaReport_KanCha_Print_Old.aspx.cs">
+      <DependentUpon>ShenChaReport_KanCha_Print_Old.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsultationManage\ShenChaReport_KanCha_Print_Old.aspx.designer.cs">
+      <DependentUpon>ShenChaReport_KanCha_Print_Old.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultationManage\ShenChaReport_SZ.aspx.cs">
+      <DependentUpon>ShenChaReport_SZ.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsultationManage\ShenChaReport_SZ.aspx.designer.cs">
+      <DependentUpon>ShenChaReport_SZ.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultationManage\ShenChaReport_SZ_Print.aspx.cs">
+      <DependentUpon>ShenChaReport_SZ_Print.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsultationManage\ShenChaReport_SZ_Print.aspx.designer.cs">
+      <DependentUpon>ShenChaReport_SZ_Print.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultationManage\ZhongShenOpinionEdit.aspx.cs">
+      <DependentUpon>ZhongShenOpinionEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsultationManage\ZhongShenOpinionEdit.aspx.designer.cs">
+      <DependentUpon>ZhongShenOpinionEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultationManage\ZhongShenOpinionPrint.aspx.cs">
+      <DependentUpon>ZhongShenOpinionPrint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsultationManage\ZhongShenOpinionPrint.aspx.designer.cs">
+      <DependentUpon>ZhongShenOpinionPrint.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultationManage\ZiXunUserEdit.aspx.cs">
+      <DependentUpon>ZiXunUserEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsultationManage\ZiXunUserEdit.aspx.designer.cs">
+      <DependentUpon>ZiXunUserEdit.aspx</DependentUpon>
     </Compile>
     <Compile Include="DailyManage\CmpAttendEdit.aspx.cs">
       <DependentUpon>CmpAttendEdit.aspx</DependentUpon>
@@ -313,6 +427,27 @@
     </Compile>
     <Compile Include="DailyManage\CompanyAttendanceList.aspx.designer.cs">
       <DependentUpon>CompanyAttendanceList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DailyManage\DeptAttendanceCard.aspx.cs">
+      <DependentUpon>DeptAttendanceCard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DailyManage\DeptAttendanceCard.aspx.designer.cs">
+      <DependentUpon>DeptAttendanceCard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DailyManage\DeptAttendanceEdit.aspx.cs">
+      <DependentUpon>DeptAttendanceEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DailyManage\DeptAttendanceEdit.aspx.designer.cs">
+      <DependentUpon>DeptAttendanceEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DailyManage\ProjectAttendanceCard.aspx.cs">
+      <DependentUpon>ProjectAttendanceCard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DailyManage\ProjectAttendanceCard.aspx.designer.cs">
+      <DependentUpon>ProjectAttendanceCard.aspx</DependentUpon>
     </Compile>
     <Compile Include="ProjectManage\ProjectMonitor.aspx.cs">
       <DependentUpon>ProjectMonitor.aspx</DependentUpon>
@@ -460,24 +595,6 @@
     <Compile Include="ConsultationManage\ProjectContractEdit.aspx.designer.cs">
       <DependentUpon>ProjectContractEdit.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ConsultationManage\ProjectConvertPrint.aspx.cs">
-      <DependentUpon>ProjectConvertPrint.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ConsultationManage\ProjectConvertPrint.aspx.designer.cs">
-      <DependentUpon>ProjectConvertPrint.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ConsultationManage\ProjectEdit.aspx.cs">
-      <DependentUpon>ProjectEdit.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ConsultationManage\ProjectFileZXItem.aspx.cs">
-      <DependentUpon>ProjectFileZXItem.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ConsultationManage\ProjectFileZXItem.aspx.designer.cs">
-      <DependentUpon>ProjectFileZXItem.aspx</DependentUpon>
-    </Compile>
     <Compile Include="ConsultationManage\ProjectFileZXList.aspx.cs">
       <DependentUpon>ProjectFileZXList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -485,20 +602,12 @@
     <Compile Include="ConsultationManage\ProjectFileZXList.aspx.designer.cs">
       <DependentUpon>ProjectFileZXList.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ConsultationManage\ProjectFileZXListEdit.aspx.cs">
-      <DependentUpon>ProjectFileZXListEdit.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
     <Compile Include="ConsultationManage\ProjectList.aspx.cs">
       <DependentUpon>ProjectList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ConsultationManage\ShenChaFWdy.aspx.cs">
       <DependentUpon>ShenChaFWdy.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ConsultationManage\ShenChaFWEdit.aspx.cs">
-      <DependentUpon>ShenChaFWEdit.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ConsultationManage\ShenChaJKdy.aspx.cs">
@@ -521,10 +630,6 @@
       <DependentUpon>ShenChaReportList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ConsultationManage\ShenChaSC_BGdy.aspx.cs">
-      <DependentUpon>ShenChaSC_BGdy.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
     <Compile Include="ConsultationManage\ShenChaSZdy.aspx.cs">
       <DependentUpon>ShenChaSZdy.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -533,46 +638,13 @@
       <DependentUpon>ShenChaSZEdit.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ConsultationManage\SZSCBG.aspx.cs">
-      <DependentUpon>SZSCBG.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ConsultationManage\SZSCBG.aspx.designer.cs">
-      <DependentUpon>SZSCBG.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ConsultationManage\SZSCDY.aspx.cs">
-      <DependentUpon>SZSCDY.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ConsultationManage\SZSCDY.aspx.designer.cs">
-      <DependentUpon>SZSCDY.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ConsultationManage\UserInfoEdit.aspx.cs">
-      <DependentUpon>UserInfoEdit.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
     <Compile Include="ConsultationManage\ShouKuanList.aspx.cs">
       <DependentUpon>ShouKuanList.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ConsultationManage\ChouJinPreEdit.aspx.cs">
-      <DependentUpon>ChouJinPreEdit.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ConsultationManage\ChouJinAdjust.aspx.cs">
-      <DependentUpon>ChouJinAdjust.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ConsultationManage\InvoiceList.aspx.cs">
       <DependentUpon>InvoiceList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DailyManage\CompanyDetail.aspx.cs">
-      <DependentUpon>CompanyDetail.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DailyManage\CompanyDetail.aspx.designer.cs">
-      <DependentUpon>CompanyDetail.aspx</DependentUpon>
     </Compile>
     <Compile Include="DailyManage\DeptAttendanceList.aspx.cs">
       <DependentUpon>DeptAttendanceList.aspx</DependentUpon>
@@ -704,13 +776,6 @@
     <Compile Include="DailyManage\UserView.aspx.designer.cs">
       <DependentUpon>UserView.aspx</DependentUpon>
     </Compile>
-    <Compile Include="FrmTaskView.aspx.cs">
-      <DependentUpon>FrmTaskView.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="FrmTaskView.aspx.designer.cs">
-      <DependentUpon>FrmTaskView.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
       <SubType>Code</SubType>
@@ -736,59 +801,6 @@
     <Compile Include="Masters\Ext\IE8formpage.master.cs">
       <DependentUpon>IE8formpage.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="MessageManage\DeptList.aspx.cs">
-      <DependentUpon>DeptList.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="MessageManage\MessageBox.aspx.cs">
-      <DependentUpon>MessageBox.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="MessageManage\MessageBoxRight.aspx.cs">
-      <DependentUpon>MessageBoxRight.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="MessageManage\MessageList.aspx.cs">
-      <DependentUpon>MessageList.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="MessageManage\MessageSend.aspx.cs">
-      <DependentUpon>MessageSend.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="MessageManage\MessageTab.aspx.cs">
-      <DependentUpon>MessageTab.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="MessageManage\UserTab.aspx.cs">
-      <DependentUpon>UserTab.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Modules\Office\SysMessageEdit.aspx.cs">
-      <DependentUpon>SysMessageEdit.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Modules\Office\SysMessageEdit.aspx.designer.cs">
-      <DependentUpon>SysMessageEdit.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Modules\Office\SysMessageList.aspx.cs">
-      <DependentUpon>SysMessageList.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Modules\Office\SysMessageTab.aspx.cs">
-      <DependentUpon>SysMessageTab.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Modules\Office\SysMessageTab.aspx.designer.cs">
-      <DependentUpon>SysMessageTab.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Modules\Office\SysMessageView.aspx.cs">
-      <DependentUpon>SysMessageView.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Modules\Office\SysMessageView.aspx.designer.cs">
-      <DependentUpon>SysMessageView.aspx</DependentUpon>
     </Compile>
     <Compile Include="Modules\SysApp\AppEdit.aspx.cs">
       <DependentUpon>AppEdit.aspx</DependentUpon>
@@ -1168,18 +1180,6 @@
     <Compile Include="Portal\DeptPortalSet.aspx.designer.cs">
       <DependentUpon>DeptPortalSet.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ProjectManage\BusinessHandbookEdit.aspx.cs">
-      <DependentUpon>BusinessHandbookEdit.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ProjectManage\BusinessHandbookList.aspx.cs">
-      <DependentUpon>BusinessHandbookList.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ProjectManage\EngineeringQualityReportEdit.aspx.cs">
-      <DependentUpon>EngineeringQualityReportEdit.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
     <Compile Include="ProjectManage\EngineeringQualityReportList.aspx.cs">
       <DependentUpon>EngineeringQualityReportList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1191,13 +1191,6 @@
     <Compile Include="ProjectManage\PartQualityReportList.aspx.cs">
       <DependentUpon>PartQualityReportList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ProjectManage\ProjectFileItem.aspx.cs">
-      <DependentUpon>ProjectFileItem.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ProjectManage\ProjectFileItem.aspx.designer.cs">
-      <DependentUpon>ProjectFileItem.aspx</DependentUpon>
     </Compile>
     <Compile Include="ProjectManage\ProjectFileList.aspx.cs">
       <DependentUpon>ProjectFileList.aspx</DependentUpon>
@@ -1222,10 +1215,6 @@
       <DependentUpon>SupervisionJianBaoList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ProjectManage\SupervisionNoticeEdit.aspx.cs">
-      <DependentUpon>SupervisionNoticeEdit.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
     <Compile Include="ProjectManage\SupervisionNoticeList.aspx.cs">
       <DependentUpon>SupervisionNoticeList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1238,20 +1227,8 @@
       <DependentUpon>SupervisionRiZhiList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ProjectManage\SupervisionYueBaoEdit.aspx.cs">
-      <DependentUpon>SupervisionYueBaoEdit.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
     <Compile Include="ProjectManage\SupervisionYueBaoList.aspx.cs">
       <DependentUpon>SupervisionYueBaoList.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ProjectManage\WorkSummaryEdit.aspx.cs">
-      <DependentUpon>WorkSummaryEdit.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ProjectManage\WorkSummaryList.aspx.cs">
-      <DependentUpon>WorkSummaryList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ProjectManage\SupervisionDCList.aspx.cs">
@@ -2257,19 +2234,41 @@
     <Content Include="bootstrap32\js\bootstrap.min.js" />
     <Content Include="CommonPages\ProjectSelect.aspx" />
     <Content Include="CommonPages\Select\ExpertSelect.aspx" />
+    <Content Include="ConsultationManage\BeiAnDengJiBiaoPrint.aspx" />
+    <Content Include="ConsultationManage\BeiAnDengJiBiao_Edit.aspx" />
     <Content Include="ConsultationManage\ChouJinCard.aspx" />
     <Content Include="ConsultationManage\ChouJinList.aspx" />
     <Content Include="ConsultationManage\ChouJinPrint.aspx" />
-    <Content Include="ConsultationManage\FWJZDY.aspx" />
-    <Content Include="ConsultationManage\FWJZSCBG.aspx" />
     <Content Include="ConsultationManage\GroupUser.aspx" />
+    <Content Include="ConsultationManage\HuiZongBiaoPrint.aspx" />
     <Content Include="ConsultationManage\InvoiceEdit.aspx" />
     <Content Include="ConsultationManage\JKSCBG.aspx" />
     <Content Include="ConsultationManage\JKSCDY.aspx" />
+    <Content Include="ConsultationManage\KangZhenBiao_Print.aspx" />
+    <Content Include="ConsultationManage\KangZhenOpinion_Edit.aspx" />
     <Content Include="ConsultationManage\KCSCBG.aspx" />
     <Content Include="ConsultationManage\KCSCDY.aspx" />
+    <Content Include="ConsultationManage\ProjectCard.aspx" />
+    <Content Include="ConsultationManage\ProjectFileZXEdit.aspx" />
+    <Content Include="ConsultationManage\ShenChaHeGeShuPrint.aspx" />
+    <Content Include="ConsultationManage\ShenChaQingKuang_Print.aspx" />
+    <Content Include="ConsultationManage\ShenChaReport_FWJZ.aspx" />
+    <Content Include="ConsultationManage\ShenChaReport_FWJZ_Print.aspx" />
+    <Content Include="ConsultationManage\ShenChaReport_JiKeng.aspx" />
+    <Content Include="ConsultationManage\ShenChaReport_JiKeng_Print.aspx" />
+    <Content Include="ConsultationManage\ShenChaReport_KanCha_Edit.aspx" />
+    <Content Include="ConsultationManage\ShenChaReport_KanCha_Print.aspx" />
+    <Content Include="ConsultationManage\ShenChaReport_KanCha_Print_Old.aspx" />
+    <Content Include="ConsultationManage\ShenChaReport_SZ.aspx" />
+    <Content Include="ConsultationManage\ShenChaReport_SZ_Print.aspx" />
+    <Content Include="ConsultationManage\ZhongShenOpinionEdit.aspx" />
+    <Content Include="ConsultationManage\ZhongShenOpinionPrint.aspx" />
+    <Content Include="ConsultationManage\ZiXunUserEdit.aspx" />
     <Content Include="DailyManage\CmpAttendEdit.aspx" />
     <Content Include="DailyManage\CompanyAttendanceList.aspx" />
+    <Content Include="DailyManage\DeptAttendanceCard.aspx" />
+    <Content Include="DailyManage\DeptAttendanceEdit.aspx" />
+    <Content Include="DailyManage\ProjectAttendanceCard.aspx" />
     <Content Include="echarts\build\build.js" />
     <Content Include="echarts\build\config-tpl.js" />
     <Content Include="echarts\build\echarts-map.js" />
@@ -2869,31 +2868,19 @@
     <Content Include="ConsultationManage\ExpertList.aspx" />
     <Content Include="ConsultationManage\OpinionCoverPrint.aspx" />
     <Content Include="ConsultationManage\ProjectContractEdit.aspx" />
-    <Content Include="ConsultationManage\ProjectConvertPrint.aspx" />
-    <Content Include="ConsultationManage\ProjectEdit.aspx" />
-    <Content Include="ConsultationManage\ProjectFileZXItem.aspx" />
     <Content Include="ConsultationManage\ProjectFileZXList.aspx" />
-    <Content Include="ConsultationManage\ProjectFileZXListEdit.aspx" />
     <Content Include="ConsultationManage\ProjectList.aspx" />
     <Content Include="ConsultationManage\ShenChaFWdy.aspx" />
-    <Content Include="ConsultationManage\ShenChaFWEdit.aspx" />
     <Content Include="ConsultationManage\ShenChaJKdy.aspx" />
     <Content Include="ConsultationManage\ShenChaJKEdit.aspx" />
     <Content Include="ConsultationManage\ShenChaKTdy.aspx" />
     <Content Include="ConsultationManage\ShenChaKTEdit.aspx" />
     <Content Include="ConsultationManage\ShenChaReportList.aspx" />
-    <Content Include="ConsultationManage\ShenChaSC_BGdy.aspx" />
     <Content Include="ConsultationManage\ShenChaSZdy.aspx" />
     <Content Include="ConsultationManage\ShenChaSZEdit.aspx" />
-    <Content Include="ConsultationManage\SZSCBG.aspx" />
-    <Content Include="ConsultationManage\SZSCDY.aspx" />
-    <Content Include="ConsultationManage\UserInfoEdit.aspx" />
     <Content Include="ConsultationManage\ShouKuanList.aspx" />
-    <Content Include="ConsultationManage\ChouJinPreEdit.aspx" />
-    <Content Include="ConsultationManage\ChouJinAdjust.aspx" />
     <Content Include="ConsultationManage\InvoiceList.aspx" />
     <Content Include="css\common.css" />
-    <Content Include="DailyManage\CompanyDetail.aspx" />
     <Content Include="DailyManage\DeptAttendanceDetail.aspx" />
     <Content Include="DailyManage\FileManage.aspx" />
     <Content Include="DailyManage\FileType.aspx" />
@@ -6631,12 +6618,6 @@
     <None Include="App_Themes\Ext\images\yourtheme\window\right-corners.psd" />
     <None Include="App_Themes\Ext\images\yourtheme\window\top-bottom.psd" />
     <None Include="App_Themes\Ext\resources.jsb" />
-    <Content Include="AddressBook\EnterpriseAddrBookEdit.aspx" />
-    <Content Include="AddressBook\EnterpriseAddrBookTree.aspx" />
-    <Content Include="AddressBook\Manage_AddrBookList.aspx" />
-    <Content Include="AddressBook\Manage_AddrBookTree.aspx" />
-    <Content Include="AddressBook\Manage_AddrBook_View.aspx" />
-    <Content Include="AddressBook\nobody.png" />
     <Content Include="App_Data\ASPNETDB.MDF">
     </Content>
     <Content Include="App_Data\aspnetdb_log.ldf">
@@ -6683,7 +6664,6 @@
     <Content Include="DailyManage\DeptAttendanceList.aspx" />
     <Content Include="DailyManage\UserList.aspx" />
     <Content Include="DailyManage\UserView.aspx" />
-    <Content Include="FrmTaskView.aspx" />
     <Content Include="Global.asax" />
     <Content Include="images\center\center-calender.png" />
     <Content Include="images\center\center-center.png" />
@@ -7034,8 +7014,6 @@
     <Content Include="Login_Theme\img\top_bg.gif" />
     <Content Include="Login_Theme\login_pro.css" />
     <Content Include="Login_Theme\mini-pkg-min.css" />
-    <Content Include="Modules\Office\Message.png" />
-    <Content Include="Modules\Office\back.jpg" />
     <None Include="Modules\SysApp\OrgMag\UserTemplate.XLS" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -7101,40 +7079,24 @@
     <Content Include="js\My97DatePicker\skin\whyGreen\datepicker.css" />
     <Content Include="js\My97DatePicker\skin\whyGreen\img.gif" />
     <Content Include="js\My97DatePicker\WdatePicker.js" />
-    <Content Include="MessageManage\DeptList.aspx" />
-    <Content Include="MessageManage\MessageBox.aspx" />
-    <Content Include="MessageManage\MessageBoxRight.aspx" />
-    <Content Include="MessageManage\MessageList.aspx" />
-    <Content Include="MessageManage\MessageSend.aspx" />
-    <Content Include="MessageManage\MessageTab.aspx" />
-    <Content Include="MessageManage\newMessage.gif" />
-    <Content Include="MessageManage\UserTab.aspx" />
     <Content Include="Modules\SysApp\OrgMag\UsrView.aspx" />
     <Content Include="Organization\OrgStructure.aspx" />
     <Content Include="Organization\OrgStructureEdit.aspx" />
     <Content Include="Organization\UsrView.aspx" />
     <Content Include="Portal\DeptManage.aspx" />
     <Content Include="Portal\DeptPortalSet.aspx" />
-    <Content Include="ProjectManage\BusinessHandbookEdit.aspx" />
-    <Content Include="ProjectManage\BusinessHandbookList.aspx" />
-    <Content Include="ProjectManage\EngineeringQualityReportEdit.aspx" />
     <Content Include="ProjectManage\EngineeringQualityReportList.aspx" />
     <Content Include="ProjectManage\GetSup.aspx" />
     <Content Include="ProjectManage\PartQualityReportList.aspx" />
-    <Content Include="ProjectManage\ProjectFileItem.aspx" />
     <Content Include="ProjectManage\ProjectFileList.aspx" />
     <Content Include="ProjectManage\ProjectFileListEdit.aspx" />
     <Content Include="ProjectManage\SupervisionGuiHuaList.aspx" />
     <Content Include="ProjectManage\SupervisionJianBaoEdit.aspx" />
     <Content Include="ProjectManage\SupervisionJianBaoList.aspx" />
-    <Content Include="ProjectManage\SupervisionNoticeEdit.aspx" />
     <Content Include="ProjectManage\SupervisionNoticeList.aspx" />
     <Content Include="ProjectManage\SupervisionRiZhiEdit.aspx" />
     <Content Include="ProjectManage\SupervisionRiZhiList.aspx" />
-    <Content Include="ProjectManage\SupervisionYueBaoEdit.aspx" />
     <Content Include="ProjectManage\SupervisionYueBaoList.aspx" />
-    <Content Include="ProjectManage\WorkSummaryEdit.aspx" />
-    <Content Include="ProjectManage\WorkSummaryList.aspx" />
     <Content Include="ProjectManage\SupervisionDCList.aspx" />
     <Content Include="ProjectManage\SupervisionDCEdit.aspx" />
     <Content Include="ProjectManage\SupervisionECList.aspx" />
@@ -7177,11 +7139,6 @@
     <Content Include="js\ext\ux\GroupHeader.js" />
     <Content Include="js\ext\ux\GroupHeaderPlugin.js" />
     <Content Include="js\lib\jquery-ui.js" />
-    <Content Include="Modules\Office\calendar.htm" />
-    <Content Include="Modules\Office\SysMessageEdit.aspx" />
-    <Content Include="Modules\Office\SysMessageList.aspx" />
-    <Content Include="Modules\Office\SysMessageTab.aspx" />
-    <Content Include="Modules\Office\SysMessageView.aspx" />
     <Content Include="Modules\SysApp\AppEdit.aspx" />
     <Content Include="Modules\SysApp\MdlMag\AuthEdit.aspx" />
     <Content Include="Modules\SysApp\MdlMag\AuthGroup.aspx" />
@@ -7279,8 +7236,13 @@
     <Folder Include="Modules\SysApp\SysMag\File\" />
     <Folder Include="obj\" />
   </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

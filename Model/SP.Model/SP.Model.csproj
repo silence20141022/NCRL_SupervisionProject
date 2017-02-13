@@ -98,11 +98,13 @@
     <Compile Include="Customed\ChouJinResult.cs" />
     <Compile Include="Customed\CmpAttendance.cs" />
     <Compile Include="Customed\CmpAttendanceDetail.cs" />
+    <Compile Include="Customed\DangerSource.cs" />
     <Compile Include="Customed\DelegateInfo.cs" />
     <Compile Include="Customed\DeptAttendance.cs" />
     <Compile Include="Customed\DeptAttendanceDetail.cs" />
     <Compile Include="Customed\EngineeringQualityReport.cs" />
     <Compile Include="Customed\EnterpriseAddrBook.cs" />
+    <Compile Include="Customed\EnvironmentFactor.cs" />
     <Compile Include="Customed\ExamineMeeting.cs" />
     <Compile Include="Customed\ExamineOpinion.cs" />
     <Compile Include="Customed\ExamineTask.cs" />
@@ -111,6 +113,7 @@
     <Compile Include="Customed\KanChaSheJi.cs" />
     <Compile Include="Customed\KangZhen_Project.cs" />
     <Compile Include="Customed\NotePad.cs" />
+    <Compile Include="Customed\PartQualityReport.cs" />
     <Compile Include="Customed\Project.cs" />
     <Compile Include="Customed\ProjectAttendance.cs" />
     <Compile Include="Customed\ProjectAttendanceDetail.cs" />
@@ -127,6 +130,8 @@
     <Compile Include="Customed\ShouKuan.cs" />
     <Compile Include="Customed\SignRequest.cs" />
     <Compile Include="Customed\SubProject.cs" />
+    <Compile Include="Customed\SupervisionDC.cs" />
+    <Compile Include="Customed\SupervisionEC.cs" />
     <Compile Include="Customed\SupervisionGuiHua.cs" />
     <Compile Include="Customed\SupervisionJianBao.cs" />
     <Compile Include="Customed\SupervisionNotice.cs" />
@@ -141,11 +146,13 @@
     <Compile Include="Generated\ChouJinResult.g.cs" />
     <Compile Include="Generated\CmpAttendance.g.cs" />
     <Compile Include="Generated\CmpAttendanceDetail.g.cs" />
+    <Compile Include="Generated\DangerSource.g.cs" />
     <Compile Include="Generated\DelegateInfo.g.cs" />
     <Compile Include="Generated\DeptAttendance.g.cs" />
     <Compile Include="Generated\DeptAttendanceDetail.g.cs" />
     <Compile Include="Generated\EngineeringQualityReport.g.cs" />
     <Compile Include="Generated\EnterpriseAddrBook.g.cs" />
+    <Compile Include="Generated\EnvironmentFactor.g.cs" />
     <Compile Include="Generated\ExamineMeeting.g.cs" />
     <Compile Include="Generated\ExamineOpinion.g.cs" />
     <Compile Include="Generated\ExamineTask.g.cs" />
@@ -154,6 +161,7 @@
     <Compile Include="Generated\KanChaSheJi.g.cs" />
     <Compile Include="Generated\KangZhen_Project.g.cs" />
     <Compile Include="Generated\NotePad.g.cs" />
+    <Compile Include="Generated\PartQualityReport.g.cs" />
     <Compile Include="Generated\Project.g.cs" />
     <Compile Include="Generated\ProjectAttendance.g.cs" />
     <Compile Include="Generated\ProjectAttendanceDetail.g.cs" />
@@ -171,6 +179,8 @@
     <Compile Include="Generated\ShouKuan.g.cs" />
     <Compile Include="Generated\SignRequest.g.cs" />
     <Compile Include="Generated\SubProject.g.cs" />
+    <Compile Include="Generated\SupervisionDC.g.cs" />
+    <Compile Include="Generated\SupervisionEC.g.cs" />
     <Compile Include="Generated\SupervisionGuiHua.g.cs" />
     <Compile Include="Generated\SupervisionJianBao.g.cs" />
     <Compile Include="Generated\SupervisionNotice.g.cs" />

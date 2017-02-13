@@ -225,7 +225,6 @@ namespace SP.Web.DailyManage
                 Pent.ProjectName = ProEnt.ProjectName;
                 Pent.Year = Convert.ToInt32(Year);
                 Pent.Month = Convert.ToInt32(Month);
-                Pent.PManagerId = ProEnt.PManagerId;
                 Pent.PManagerName = ProEnt.PManagerName;
                 Pent.BelongDeptId = ProEnt.BelongDeptId;
                 Pent.BelongDeptName = ProEnt.BelongDeptName;
