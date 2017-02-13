@@ -96,4 +96,3 @@ E:\NCRL_SupervisionProject\Framework\Aim.Component\bin\Debug\Aim.Component.pdb
 E:\NCRL_SupervisionProject\Framework\Aim.Component\obj\Debug\Aim.Component.csproj.ResolveComReference.cache
 E:\NCRL_SupervisionProject\Framework\Aim.Component\obj\Debug\Aim.Component.dll
 E:\NCRL_SupervisionProject\Framework\Aim.Component\obj\Debug\Aim.Component.pdb
-E:\NCRL_SupervisionProject\Framework\Aim.Component\obj\Debug\Aim.Component.csprojResolveAssemblyReference.cache

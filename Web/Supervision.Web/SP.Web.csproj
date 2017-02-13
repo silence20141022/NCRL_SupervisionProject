@@ -84,7 +84,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\NHibernate.dll</HintPath>
     </Reference>
-    <Reference Include="Oracle.DataAccess, Version=2.112.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86" />
+    <Reference Include="Oracle.DataAccess, Version=2.112.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Oracle.DataAccess.dll</HintPath>
+    </Reference>
     <Reference Include="PostSharp, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b13fd38b8f9c99d7, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">

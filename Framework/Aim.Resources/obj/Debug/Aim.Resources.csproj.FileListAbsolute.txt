@@ -7,3 +7,7 @@ D:\中国瑞林\NCRL_SupervisionProject\Framework\Aim.Resources\bin\Debug\Aim.Re
 D:\中国瑞林\NCRL_SupervisionProject\Framework\Aim.Resources\bin\Debug\Aim.Resources.pdb
 D:\中国瑞林\NCRL_SupervisionProject\Framework\Aim.Resources\obj\Debug\Aim.Resources.dll
 D:\中国瑞林\NCRL_SupervisionProject\Framework\Aim.Resources\obj\Debug\Aim.Resources.pdb
+E:\NCRL_SupervisionProject\Framework\Aim.Resources\bin\Debug\Aim.Resources.dll
+E:\NCRL_SupervisionProject\Framework\Aim.Resources\bin\Debug\Aim.Resources.pdb
+E:\NCRL_SupervisionProject\Framework\Aim.Resources\obj\Debug\Aim.Resources.dll
+E:\NCRL_SupervisionProject\Framework\Aim.Resources\obj\Debug\Aim.Resources.pdb
