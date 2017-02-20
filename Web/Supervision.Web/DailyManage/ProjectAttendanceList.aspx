@@ -71,7 +71,7 @@
                 columnLines: true,
                 columns: [
                 { xtype: 'rownumberer', width: 35 },
-                { header: '项目名称', dataIndex: 'ProjectName', width: 200 },
+                { header: '项目名称', dataIndex: 'ProjectName', width: 250 },
                 { dataIndex: 'PManagerName', header: '项目总监', width: 100 },
 			    { dataIndex: 'Year', header: '所属年份', width: 100, renderer: function (value, metadata, record) {
 			        return value + "年" + record.get("Month") + "月";
@@ -81,11 +81,6 @@
                 { dataIndex: 'BelongDeptName', header: '所属部门', width: 140, sortable: true },
 			    { dataIndex: 'CreateName', header: '填报人', width: 80 },
                 { header: '备注', dataIndex: 'Remark', flex: 1 }
-                //                { header: '详细', dataIndex: 'Id', sortable: false, width: 50, renderer: function (value, metadata, record, rowindex, colIndex) {
-                //                    return '<span style="cursor: pointer; text-decoration: underline" onclick="showdetail(\'' + value + '\')"><font color="blue"><i class="fa fa-th"></i></font></span>';
-                //                }
-                //                }
-
                 ],
                 bbar: pgbar
             })

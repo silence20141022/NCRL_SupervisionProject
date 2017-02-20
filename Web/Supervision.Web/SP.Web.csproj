@@ -712,13 +712,6 @@
     <Compile Include="DailyManage\JianLiUserEdit.aspx.designer.cs">
       <DependentUpon>JianLiUserEdit.aspx</DependentUpon>
     </Compile>
-    <Compile Include="DailyManage\ProjectAttendanceEdit.aspx.cs">
-      <DependentUpon>ProjectAttendanceEdit.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DailyManage\ProjectAttendanceEdit.aspx.designer.cs">
-      <DependentUpon>ProjectAttendanceEdit.aspx</DependentUpon>
-    </Compile>
     <Compile Include="DailyManage\ProjectAttendanceList.aspx.cs">
       <DependentUpon>ProjectAttendanceList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2893,7 +2886,6 @@
     <Content Include="DailyManage\GroupUser.aspx" />
     <Content Include="DailyManage\groupuser.js" />
     <Content Include="DailyManage\JianLiUserEdit.aspx" />
-    <Content Include="DailyManage\ProjectAttendanceEdit.aspx" />
     <Content Include="DailyManage\ProjectAttendanceList.aspx" />
     <Content Include="DailyManage\ProjectEdit.aspx" />
     <Content Include="DailyManage\ProjectFileUpload.aspx" />
@@ -6977,7 +6969,6 @@
     <Content Include="images\shared\upload.png" />
     <Content Include="js\jquery.smartWizard.js" />
     <Content Include="js\PCASClass.js" />
-    <Content Include="js\smart_wizard.css" />
     <Content Include="login_data\blank.gif" />
     <Content Include="login_data\img\btn_bg.png" />
     <Content Include="login_data\img\loading.gif" />

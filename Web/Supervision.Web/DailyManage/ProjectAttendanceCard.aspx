@@ -16,8 +16,8 @@
     </style>
     <script type="text/javascript">
         var id = getQueryString("id");
-        var store;
-        var SignType = "正常上班";
+        var store_detail, grid;
+        var SignType = "√";
         var data_prj = [];
         var data_year = [];
         var data_month = [];
@@ -71,7 +71,7 @@
                         valueField: 'year',
                         name: 'Year',
                         store: store_year,
-                        queryMode:'local',
+                        queryMode: 'local',
                         editable: false,
                         fieldLabel: '所属年份',
                         labelAlign: 'right',
@@ -126,7 +126,7 @@
                     var btn1 = Ext.create('Ext.button.Button', {
                         text: '<span style="color:white">上 班√</span>',
                         cls: 'btn-active', handler: function (btn) {
-                            SignType = "正常上班";
+                            SignType = "√";
                             btn2.removeCls('btn-active'); btn2.setText('请 假!');
                             btn3.removeCls('btn-active'); btn3.setText('其 他×');
                             btn1.addCls('btn-active'); btn1.setText('<span style="color:white">上 班√</span>');
@@ -134,7 +134,7 @@
                     })
                     var btn2 = Ext.create('Ext.button.Button', {
                         text: '请 假!', handler: function (btn) {
-                            SignType = "请假";
+                            SignType = "!";
                             btn1.removeCls('btn-active'); btn1.setText('上 班√');
                             btn3.removeCls('btn-active'); btn3.setText('其 他×');
                             btn2.addCls('btn-active'); btn2.setText('<span style="color:white">请 假!</span>');
@@ -142,7 +142,7 @@
                     })
                     var btn3 = Ext.create('Ext.button.Button', {
                         text: '其 他×', handler: function (btn) {
-                            SignType = "其他";
+                            SignType = "×";
                             btn1.removeCls('btn-active'); btn1.setText('上 班√');
                             btn2.removeCls('btn-active'); btn2.setText('请 假!');
                             btn3.addCls('btn-active'); btn3.setText('<span style="color:white">其 他×</span>');
@@ -172,23 +172,67 @@
                             }
                         }, '-', btn1, btn2, btn3]
                     })
-                    var grid = Ext.create('Ext.grid.Panel', {
+                    //2017-2-15 modify by panhuaguo
+                    store_detail = Ext.create('Ext.data.JsonStore', {
+                        fields: ['UserId', 'UserName', 'Date1', 'Date2', 'Date3', 'Date4', 'Date5', 'Date6', 'Date7', 'Date8', 'Date9', 'Date10', 'Date11'
+                        , 'Date11', 'Date12', 'Date13', 'Date14', 'Date15', 'Date16', 'Date17', 'Date18', 'Date19', 'Date20', 'Date21'
+                        , 'Date22', 'Date23', 'Date24', 'Date25', 'Date26', 'Date27', 'Date28', 'Date29', 'Date30', 'Date31'],
+                        data: []
+                    })
+                    grid = Ext.create('Ext.grid.Panel', {
                         tbar: toolbar,
                         enableColumnHide: false,
                         titleAlign: 'center',
                         columnLines: true,
-                        columns: [],
+                        store: store_detail,
+                        columns: [
+                        { xtype: 'rownumberer', width: 30 },
+                        { header: '姓名', dataIndex: 'UserName', width: 80, sortable: false },
+                        { header: 'UserId', dataIndex: 'UserId', hidden: true, sortable: false },
+                        { header: '20', dataIndex: 'Date20', sortable: false, width: 38 },
+                        { header: '21', dataIndex: 'Date21', sortable: false, width: 38 },
+                        { header: '22', dataIndex: 'Date22', sortable: false, width: 38 },
+                        { header: '23', dataIndex: 'Date23', sortable: false, width: 38 },
+                        { header: '24', dataIndex: 'Date24', sortable: false, width: 38 },
+                        { header: '25', dataIndex: 'Date25', sortable: false, width: 38 },
+                        { header: '26', dataIndex: 'Date26', sortable: false, width: 38 },
+                        { header: '27', dataIndex: 'Date27', sortable: false, width: 38 },
+                        { header: '28', dataIndex: 'Date28', sortable: false, width: 38 },
+                        { header: '29', dataIndex: 'Date29', sortable: false, width: 38, itemId: 'col29' },
+                        { header: '30', dataIndex: 'Date30', sortable: false, width: 38, itemId: 'col30' },
+                        { header: '31', dataIndex: 'Date31', sortable: false, width: 38, itemId: 'col31' },
+                        { header: '1', dataIndex: 'Date1', sortable: false, width: 38 },
+                        { header: '2', dataIndex: 'Date2', sortable: false, width: 38 },
+                        { header: '3', dataIndex: 'Date3', sortable: false, width: 38 },
+                        { header: '4', dataIndex: 'Date4', sortable: false, width: 38 },
+                        { header: '5', dataIndex: 'Date5', sortable: false, width: 38 },
+                        { header: '6', dataIndex: 'Date6', sortable: false, width: 38 },
+                        { header: '7', dataIndex: 'Date7', sortable: false, width: 38 },
+                        { header: '8', dataIndex: 'Date8', sortable: false, width: 38 },
+                        { header: '9', dataIndex: 'Date9', sortable: false, width: 38 },
+                        { header: '10', dataIndex: 'Date10', sortable: false, width: 38 },
+                        { header: '11', dataIndex: 'Date11', sortable: false, width: 38 },
+                        { header: '12', dataIndex: 'Date12', sortable: false, width: 38 },
+                        { header: '13', dataIndex: 'Date13', sortable: false, width: 38 },
+                        { header: '14', dataIndex: 'Date14', sortable: false, width: 38 },
+                        { header: '15', dataIndex: 'Date15', sortable: false, width: 38 },
+                        { header: '16', dataIndex: 'Date16', sortable: false, width: 38 },
+                        { header: '17', dataIndex: 'Date17', sortable: false, width: 38 },
+                        { header: '18', dataIndex: 'Date18', sortable: false, width: 38 },
+                        { header: '19', dataIndex: 'Date19', sortable: false, width: 38 }],
                         listeners: {
                             cellclick: function (view, td, cellIndex, record, tr, rowIndex, e, eOpts) {
                                 var header = view.getHeaderCt().getHeaderAtIndex(cellIndex);
                                 if (header.dataIndex != "UserName") {
                                     Ext.Ajax.request({
                                         url: "ProjectAttendanceCard.aspx?action=updatedetail",
-                                        params: { "day": header.dataIndex.replace('C', ''), UserId: record.get("UserId"), UserName: record.get("UserName"), "SignType": SignType, id: id },
+                                        params: { "day": header.dataIndex, UserId: record.get("UserId"), UserName: record.get("UserName"), "SignType": SignType, id: id },
                                         success: function (response, opts) {
                                             var json = Ext.decode(response.responseText);
-                                            record.set(header.dataIndex, json.result);
-                                            record.commit();
+                                            if (json.success) {
+                                                record.set(header.dataIndex, json.result);
+                                                record.commit();
+                                            }
                                         }
                                     });
                                 }
@@ -213,53 +257,40 @@
                             id: 'move-next',
                             text: '下一步', handler: function () {
                                 if (formpanel.getForm().isValid()) {
-                                    var action = id ? 'update' : 'create';
                                     Ext.Ajax.request({
-                                        url: 'ProjectAttendanceCard.aspx?action=' + action + '&formdata=' + Ext.encode(formpanel.getForm().getValues()),
+                                        url: 'ProjectAttendanceCard.aspx?action=save&formdata=' + Ext.encode(formpanel.getForm().getValues()),
                                         method: 'POST',
                                         success: function (response, opts) {
                                             var json = Ext.decode(response.responseText);
-                                            if (json.id) {
-                                                id = json.id;
-                                                formpanel.getForm().findField("Id").setValue(id);
-                                                combo_project.setReadOnly({ readOnly: true });
-                                                combo_year.setReadOnly({ readOnly: true });
-                                                combo_month.setReadOnly({ readOnly: true });
-                                                Ext.Ajax.request({
-                                                    url: 'ProjectAttendanceCard.aspx?action=inigrid&id=' + id,
-                                                    method: 'POST',
-                                                    success: function (response, opts) {
-                                                        var json = Ext.decode(response.responseText);
-                                                        var filedarray = [];
-                                                        var columnarray = [{ xtype: 'rownumberer', width: 30 }];
-                                                        for (var i = 0; i < json.columns.length; i++) {
-                                                            filedarray.push(json.columns[i].ColumnName);
-                                                            var key = json.columns[i].ColumnName;
-                                                            switch (key) {
-                                                                case "UserName":
-                                                                    columnarray.push({ header: '姓名', dataIndex: key, width: 80, sortable: false });
-                                                                    break;
-                                                                case "UserId":
-                                                                    columnarray.push({ header: key, header: key, hidden: true, sortable: false });
-                                                                    break;
-                                                                default:
-                                                                    columnarray.push({ header: key.replace('C', ''), dataIndex: key, sortable: false, width: 38 });
-                                                                    break;
-                                                            }
-                                                        }
-                                                        ProjectAttendance.setFields(filedarray); //Model构建完毕
-                                                        store = Ext.create('Ext.data.JsonStore', {
-                                                            model: 'ProjectAttendance',
-                                                            data: json.rows
-                                                        })
-                                                        grid.reconfigure(store, columnarray);
-                                                        grid.setTitle('<h2>' + json.title + '</h2>');
-                                                        layout.next(); //获得当前active的component的后台一个component 或false
-                                                        Ext.getCmp('move-next').setDisabled(!layout.getNext());
-                                                        Ext.getCmp('move-prev').setDisabled(!layout.getPrev());
-                                                    }
-                                                })
+                                            id = json.Id;
+                                            formpanel.getForm().findField("Id").setValue(json.Id);
+                                            combo_project.setReadOnly({ readOnly: true });
+                                            combo_year.setReadOnly({ readOnly: true });
+                                            combo_month.setReadOnly({ readOnly: true });
+                                            if (json.month - 1 == 2 || json.month - 1 == 4 || json.month - 1 == 6 || json.month - 1 == 9 || json.month - 1 == 11) {
+                                                grid.down('#col31').hide();
                                             }
+                                            if (json.month - 1 == 2) {
+                                                grid.down('#col30').hide();
+                                                if (!json.runyear) {
+                                                    grid.down('#col29').hide();
+                                                }
+                                            }
+                                            store_detail.loadData(json.detail);
+                                            // var json = Ext.decode(response.responseText);
+                                            //var filedarray = [];
+                                            // var columnarray = [{ xtype: 'rownumberer', width: 30 }];
+
+                                            // ProjectAttendance.setFields(filedarray); //Model构建完毕
+                                            //store = Ext.create('Ext.data.JsonStore', {
+                                            //    model: 'ProjectAttendance',
+                                            //    data: json.rows
+                                            //})
+                                            //grid.reconfigure(store, columnarray);
+                                            grid.setTitle('<h2>' + json.title + '</h2>');
+                                            layout.next(); //获得当前active的component的后台一个component 或false
+                                            Ext.getCmp('move-next').setDisabled(!layout.getNext());
+                                            Ext.getCmp('move-prev').setDisabled(!layout.getPrev());
                                         }
                                     })
                                 }
@@ -286,13 +317,12 @@
         })
         function GetUsers(recs) {
             Ext.each(recs, function (rec) {
-                var obj = new ProjectAttendance({ UserId: rec.get("UserId"), UserName: rec.get("Name") });
-                if (store.find("UserId", rec.get("UserId")) == -1) {
+                if (store_detail.find("UserId", rec.get("UserId")) == -1) {
                     Ext.Ajax.request({
                         url: 'ProjectAttendanceCard.aspx?action=updateprojectuser',
                         params: { userid: rec.get("UserId"), username: rec.get("Name"), id: id },
                         callback: function () {
-                            store.insert(store.data.length, obj);
+                            store_detail.insert(store_detail.data.length, { UserId: rec.get("UserId"), UserName: rec.get("Name") });
                         }
                     })
                 }

@@ -163,7 +163,7 @@ namespace SP.Web.DailyManage
                     else
                     {
                         sql = @"select UserID as UserId,Name,LoginName,Sex,Phone,Replace(Server_Seed,'江西瑞林建设监理有限公司','') as  Server_Seed,
-                        HomePhone,IDNumber,CreateDate from SysUser
+                        HomePhone,IDNumber,CreateDate,Status from SysUser
                         where Server_Seed like '%江西瑞林建设监理有限公司%' and Server_IAGUID='" + groupid + "'" + where;
                     }
                     dt = DataHelper.QueryDataTable(sql);

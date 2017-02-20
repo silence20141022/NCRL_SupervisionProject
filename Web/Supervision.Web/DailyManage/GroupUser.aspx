@@ -130,7 +130,7 @@
                     }
                 }
             })
-            Ext.regModel('User', { fields: ['UserId', 'LoginName', 'Name', 'Sex', 'Phone', 'HomePhone', 'CreateDate', 'IDNumber', 'Server_Seed', 'GroupId'] })
+            Ext.regModel('User', { fields: ['UserId', 'LoginName', 'Name', 'Sex', 'Phone', 'HomePhone', 'Status', 'CreateDate', 'IDNumber', 'Server_Seed', 'GroupId'] })
             store_user = Ext.create('Ext.data.JsonStore', {
                 model: 'User',
                 proxy: {
@@ -170,10 +170,10 @@
                             return value.length > 6 ? "" : value;
                         }
                     },
-                    { header: '姓名', dataIndex: 'Name', width: 75 },
-                //{ header: '性别', dataIndex: 'Sex', width: 60 },
+                    { header: '姓名', dataIndex: 'Name', width: 75 },                   
                     { header: '移动电话', dataIndex: 'Phone', width: 110 },
                     { header: '办公电话', dataIndex: 'HomePhone', width: 120 },
+                    { header: '状态', dataIndex: 'Status', width: 60 },
                     { header: '身份证号', dataIndex: 'IDNumber', width: 155 },
                     { header: '入职日期', xtype: 'datecolumn', dataIndex: 'CreateDate', width: 90, format: 'Y-m-d' },
                     { header: '所属部门', dataIndex: 'Server_Seed', flex: 1 }
