@@ -438,13 +438,6 @@
     <Compile Include="DailyManage\DeptAttendanceCard.aspx.designer.cs">
       <DependentUpon>DeptAttendanceCard.aspx</DependentUpon>
     </Compile>
-    <Compile Include="DailyManage\DeptAttendanceEdit.aspx.cs">
-      <DependentUpon>DeptAttendanceEdit.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DailyManage\DeptAttendanceEdit.aspx.designer.cs">
-      <DependentUpon>DeptAttendanceEdit.aspx</DependentUpon>
-    </Compile>
     <Compile Include="DailyManage\ProjectAttendanceCard.aspx.cs">
       <DependentUpon>ProjectAttendanceCard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2263,7 +2256,6 @@
     <Content Include="DailyManage\CmpAttendEdit.aspx" />
     <Content Include="DailyManage\CompanyAttendanceList.aspx" />
     <Content Include="DailyManage\DeptAttendanceCard.aspx" />
-    <Content Include="DailyManage\DeptAttendanceEdit.aspx" />
     <Content Include="DailyManage\ProjectAttendanceCard.aspx" />
     <Content Include="echarts\build\build.js" />
     <Content Include="echarts\build\config-tpl.js" />

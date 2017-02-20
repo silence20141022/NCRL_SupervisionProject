@@ -11,7 +11,7 @@
     <script type="text/javascript">
         var grid, store;
         Ext.onReady(function () {
-            Ext.regModel("KaoQi", { fields: ["Id", "BelongDeptName", "BelongDeptId", "years", "Persons", "Days", "VacationPersons", "VacationDays", "LeavePersons", "LeaveDays", "BelongDeptId", "Year", "Month","Status"] });
+            Ext.regModel("KaoQi", { fields: ["Id", "BelongDeptName", "BelongDeptId", "Remark", "BelongDeptId", "Year", "Month", "Status"] });
             store = new Ext.data.JsonStore({
                 model: 'KaoQi',
                 proxy: {
@@ -73,31 +73,29 @@
             var toolbar = Ext.create("Ext.toolbar.Toolbar", {
                 items: [yearcombo, monthcombo,
                     { xtype: 'textfield', fieldLabel: '部门名称', labelWidth: 60, id: 'DeptName' },
-                    { text: "查询", handler: function () {
-                        var DeptName = Ext.getCmp("DeptName").getValue();
-                        var json = { DeptName: DeptName, year: yearcombo.getValue(), month: monthcombo.getValue() };
-                        store.reload({ params: json });
-                    }
-                }, '-', { text: "添加", handler: function () {
-                      //  var recs = grid.getSelectionModel().getSelection();
-                       // if (!recs || recs.length <= 0) {
-                       //     Ext.Msg.alert("提示", "请选择修改的记录!");
-                       //     return;
-                      //  }
-                    //  opencenterwin("DeptAttendanceEdit.aspx?id=" + recs[0].get("Id"), '1300', '650');
-                        opencenterwin("DeptAttendanceCard.aspx", 1300, 500);
-                    }
-                    }, '-',
-                    { text: "修改", handler: function () {
-                        var recs = grid.getSelectionModel().getSelection();
-                        if (!recs || recs.length <= 0) {
-                            Ext.Msg.alert("提示", "请选择修改的记录!");
-                            return;
+                    {
+                        text: "查询", handler: function () {
+                            var DeptName = Ext.getCmp("DeptName").getValue();
+                            var json = { DeptName: DeptName, year: yearcombo.getValue(), month: monthcombo.getValue() };
+                            store.reload({ params: json });
                         }
-                        opencenterwin("DeptAttendanceCard.aspx?id=" + recs[0].get("Id"), '1300', '650');
+                    }, '-',
+                //{
+                //    text: "添加", handler: function () {
+                //        opencenterwin("DeptAttendanceCard.aspx", 1300, 500);
+                //    }
+                //    }, '-',
+                    {
+                        text: "修改", handler: function () {
+                            var recs = grid.getSelectionModel().getSelection();
+                            if (!recs || recs.length <= 0) {
+                                Ext.Msg.alert("提示", "请选择修改的记录!");
+                                return;
+                            }
+                            opencenterwin("DeptAttendanceCard.aspx?id=" + recs[0].get("Id"), '1300', '650');
+                        }
                     }
-                    }
-                              ]
+                ]
             });
             grid = Ext.create("Ext.grid.Panel", {
                 store: store,
@@ -106,11 +104,12 @@
                 tbar: toolbar,
                 selModel: { selType: "checkboxmodel" },
                 columns: [
-                    new Ext.grid.RowNumberer(),
+                    { xtype: 'rownumberer', width: 60 },
                     { header: "标示", dataIndex: "Id", hidden: true },
                     { header: "年", dataIndex: "Year", width: 100 },
                     { header: "月", dataIndex: "Month", width: 100 },
-                    { header: "所属部门", dataIndex: "BelongDeptName", flex: 1 }
+                    { header: "所属部门", dataIndex: "BelongDeptName", width: 200 },
+                    { header: '备注', dataIndex: 'Remark', flex: 1 }
                 ],
                 bbar: {
                     xtype: 'pagingtoolbar',
@@ -140,8 +139,8 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div class="">
-    </div>
+        <div class="">
+        </div>
     </form>
 </body>
 </html>

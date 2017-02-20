@@ -75,7 +75,7 @@ namespace SP.Web.DailyManage
             {
                 where += " and BelongDeptId='" + suEnt.Server_IAGUID + "'";
             }
-            sql = @"select Id,BelongDeptName,Year,Month,isnull(Status,'未归档') as Status from NCRL_SP..DeptAttendance where 1=1 " + where;
+            sql = @"select Id,BelongDeptName,Year,Month,Status,Remark from NCRL_SP..DeptAttendance where 1=1 " + where;
             DataTable td = DataHelper.QueryDataTable(GetPageData(sql));
             string str = JsonHelper.GetJsonStringFromDataTable(td);
             string json = "{\"pageCount\":" + totalRecord + ",\"rows\":" + str + "}";
