@@ -61,6 +61,6 @@ E:\NCRL_SupervisionProject\Framework\Aim.WorkFlow\bin\Debug\log4net.dll
 E:\NCRL_SupervisionProject\Framework\Aim.WorkFlow\bin\Debug\Castle.DynamicProxy2.dll
 E:\NCRL_SupervisionProject\Framework\Aim.WorkFlow\bin\Debug\Lucene.Net.dll
 E:\NCRL_SupervisionProject\Framework\Aim.WorkFlow\bin\Debug\Aim.Component.pdb
+E:\NCRL_SupervisionProject\Framework\Aim.WorkFlow\obj\Debug\Aim.WorkFlow.csprojResolveAssemblyReference.cache
 E:\NCRL_SupervisionProject\Framework\Aim.WorkFlow\obj\Debug\Aim.WorkFlow.dll
 E:\NCRL_SupervisionProject\Framework\Aim.WorkFlow\obj\Debug\Aim.WorkFlow.pdb
-E:\NCRL_SupervisionProject\Framework\Aim.WorkFlow\obj\Debug\Aim.WorkFlow.csprojResolveAssemblyReference.cache

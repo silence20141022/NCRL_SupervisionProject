@@ -58,6 +58,6 @@ E:\NCRL_SupervisionProject\Framework\Aim.Portal\bin\Debug\log4net.dll
 E:\NCRL_SupervisionProject\Framework\Aim.Portal\bin\Debug\Castle.DynamicProxy2.dll
 E:\NCRL_SupervisionProject\Framework\Aim.Portal\bin\Debug\Lucene.Net.dll
 E:\NCRL_SupervisionProject\Framework\Aim.Portal\bin\Debug\Aim.Component.pdb
+E:\NCRL_SupervisionProject\Framework\Aim.Portal\obj\Debug\Aim.Portal.csprojResolveAssemblyReference.cache
 E:\NCRL_SupervisionProject\Framework\Aim.Portal\obj\Debug\Aim.Portal.dll
 E:\NCRL_SupervisionProject\Framework\Aim.Portal\obj\Debug\Aim.Portal.pdb
-E:\NCRL_SupervisionProject\Framework\Aim.Portal\obj\Debug\Aim.Portal.csprojResolveAssemblyReference.cache

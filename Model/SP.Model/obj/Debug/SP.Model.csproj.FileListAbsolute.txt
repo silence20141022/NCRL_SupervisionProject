@@ -83,6 +83,6 @@ E:\NCRL_SupervisionProject\Model\SP.Model\bin\Debug\Castle.DynamicProxy2.dll
 E:\NCRL_SupervisionProject\Model\SP.Model\bin\Debug\Lucene.Net.dll
 E:\NCRL_SupervisionProject\Model\SP.Model\bin\Debug\Aim.Portal.pdb
 E:\NCRL_SupervisionProject\Model\SP.Model\bin\Debug\Aim.Component.pdb
+E:\NCRL_SupervisionProject\Model\SP.Model\obj\Debug\SP.Model.csprojResolveAssemblyReference.cache
 E:\NCRL_SupervisionProject\Model\SP.Model\obj\Debug\SP.Model.dll
 E:\NCRL_SupervisionProject\Model\SP.Model\obj\Debug\SP.Model.pdb
-E:\NCRL_SupervisionProject\Model\SP.Model\obj\Debug\SP.Model.csprojResolveAssemblyReference.cache

@@ -35,26 +35,7 @@ namespace Aim.Portal.Web
                     Response.Write("");
                     Response.End();
                 }
-            }
-            else if (Request["reqaction"] == "checkneedkey")
-            {
-                string loginName = this.Request.QueryString["loginname"];
-                string keyId = this.Request.QueryString["usbkey"];
-                if (SysUser.FindAllByProperties(SysUser.Prop_LoginName, loginName).Length > 0)
-                {
-                    if (SysUser.FindAllByProperties(SysUser.Prop_LoginName, loginName)[0].Server_IAGUID != null && SysUser.FindAllByProperties(SysUser.Prop_LoginName, loginName)[0].Server_IAGUID.Trim() != "")
-                    {
-                        Response.Write(SysUser.FindAllByProperties(SysUser.Prop_LoginName, loginName)[0].Server_IAGUID);
-                    }
-                    else
-                        Response.Write("false");
-                }
-                else
-                {
-                    Response.Write("false");
-                }
-                Response.End();
-            }
+            } 
             else
             {
                 string gwPassCode = Request["gwpasscode"];
@@ -67,8 +48,7 @@ namespace Aim.Portal.Web
         }
         private void DoLoginByGwPassCodeAndWorkNo(string passcode, string workno)
         {
-            bool stateflag = true;
-            // bool stateflag = GwIntegrateService.CheckGwUserSession(passcode);
+            bool stateflag = true; 
             if (stateflag)
             {
                 SysUser usr = SysUser.FindFirstByProperties("WorkNo", workno);
@@ -100,9 +80,11 @@ namespace Aim.Portal.Web
         {
             try
             {
-                if (DataHelper.QueryValue<int>("select count(UserId) from SysUser where LoginName='" + uname + "'") > 0)
+                string sql = "select count(UserId) from SysUser where LoginName='" + uname + "'";
+                if (DataHelper.QueryValue<int>(sql) > 0)
                 {
-                    if (DataHelper.QueryValue("select password from SysUser where LoginName='" + uname + "'") + "" == "")
+                    sql = "select password from SysUser where LoginName='" + uname + "'";
+                    if (DataHelper.QueryValue(sql) + "" == "")
                     {
                         Response.Write("请先设置密码再登陆！");
                     }

@@ -73,6 +73,6 @@ E:\NCRL_SupervisionProject\Framework\Aim.Portal.ServicesProvider\bin\Debug\Castl
 E:\NCRL_SupervisionProject\Framework\Aim.Portal.ServicesProvider\bin\Debug\Lucene.Net.dll
 E:\NCRL_SupervisionProject\Framework\Aim.Portal.ServicesProvider\bin\Debug\Aim.Portal.pdb
 E:\NCRL_SupervisionProject\Framework\Aim.Portal.ServicesProvider\bin\Debug\Aim.Component.pdb
+E:\NCRL_SupervisionProject\Framework\Aim.Portal.ServicesProvider\obj\Debug\Aim.Portal.ServicesProvider.csprojResolveAssemblyReference.cache
 E:\NCRL_SupervisionProject\Framework\Aim.Portal.ServicesProvider\obj\Debug\Aim.Portal.ServicesProvider.dll
 E:\NCRL_SupervisionProject\Framework\Aim.Portal.ServicesProvider\obj\Debug\Aim.Portal.ServicesProvider.pdb
-E:\NCRL_SupervisionProject\Framework\Aim.Portal.ServicesProvider\obj\Debug\Aim.Portal.ServicesProvider.csprojResolveAssemblyReference.cache

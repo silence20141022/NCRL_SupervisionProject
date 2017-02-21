@@ -22,11 +22,7 @@ namespace SP.Web.DailyManage
             string userid = Request["userid"];
             string sql = "";
             DataTable dt = null;
-            DeptAttendance daEnt = null;
-            ProjectAttendanceDetail padEnt = null;
-            DateTime dt_cur = new DateTime();
-            DateTime dt_pre = new DateTime();
-            IList<EasyDictionary> dics_padetail = null;
+            DeptAttendance daEnt = null;  
             if (!string.IsNullOrEmpty(id))
             {
                 daEnt = DeptAttendance.Find(id);
