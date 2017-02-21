@@ -649,13 +649,6 @@
     <Compile Include="DailyManage\DeptAttendanceList.aspx.designer.cs">
       <DependentUpon>DeptAttendanceList.aspx</DependentUpon>
     </Compile>
-    <Compile Include="DailyManage\DeptAttendanceDetail.aspx.cs">
-      <DependentUpon>DeptAttendanceDetail.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DailyManage\DeptAttendanceDetail.aspx.designer.cs">
-      <DependentUpon>DeptAttendanceDetail.aspx</DependentUpon>
-    </Compile>
     <Compile Include="DailyManage\FileManage.aspx.cs">
       <DependentUpon>FileManage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2869,7 +2862,6 @@
     <Content Include="ConsultationManage\ShouKuanList.aspx" />
     <Content Include="ConsultationManage\InvoiceList.aspx" />
     <Content Include="css\common.css" />
-    <Content Include="DailyManage\DeptAttendanceDetail.aspx" />
     <Content Include="DailyManage\FileManage.aspx" />
     <Content Include="DailyManage\FileType.aspx" />
     <Content Include="DailyManage\FileTypeEdit.aspx" />

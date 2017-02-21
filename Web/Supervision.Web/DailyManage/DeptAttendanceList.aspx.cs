@@ -30,19 +30,16 @@ namespace SP.Web.DailyManage
                 Response.End();
             }
             string action = Request["action"];
-            DataTable dt = null;
             switch (action)
             {
-                case "loadyear":
+                case "basedata":
                     sql = "select value as year from NCRL_Portal..SysEnumeration where ParentId='058fbee9-0a9a-4b25-b343-ea8c05396632' order by SortIndex asc";
-                    dt = DataHelper.QueryDataTable(sql);
-                    Response.Write("{rows:" + JsonHelper.GetJsonStringFromDataTable(dt) + "}");
-                    Response.End();
-                    break;
-                case "loadmonth":
+                    DataTable dt_year = DataHelper.QueryDataTable(sql);
                     sql = "select value as month from NCRL_Portal..SysEnumeration where ParentId='b25e537b-34e3-4437-87af-692e00facd73' order by SortIndex asc";
-                    dt = DataHelper.QueryDataTable(sql);
-                    Response.Write("{rows:" + JsonHelper.GetJsonStringFromDataTable(dt) + "}");
+                    DataTable dt_month = DataHelper.QueryDataTable(sql);
+                    sql = "select GroupID,REPLACE (Name , '江西瑞林建设监理有限公司' , '' ) as Name from NCRL_Portal..SysGroup where ParentId='228'";
+                    DataTable dt_dept = DataHelper.QueryDataTable(sql);
+                    Response.Write("{year:" + JsonHelper.GetJsonStringFromDataTable(dt_year) + ",month:" + JsonHelper.GetJsonStringFromDataTable(dt_month) + ",dept:" + JsonHelper.GetJsonStringFromDataTable(dt_dept) + "}");
                     Response.End();
                     break;
                 case "async":
@@ -52,21 +49,18 @@ namespace SP.Web.DailyManage
         }
         private void DoSelect()
         {
-            string DeptName = Request["DeptName"];
-            string year = Request["year"];
-            string month = Request["month"];
             string where = "";
-            if (!string.IsNullOrEmpty(DeptName))
+            if (!string.IsNullOrEmpty(Request["deptid"]))
             {
-                where += " and  BelongDeptName like '%" + DeptName + "%' ";
+                where += " and  BelongDeptId = '" + Request["deptid"] + "' ";
             }
-            if (!string.IsNullOrEmpty(year))
+            if (!string.IsNullOrEmpty(Request["year"]))
             {
-                where += " and Year =" + year + "";
+                where += " and Year =" + Request["year"] + "";
             }
-            if (!string.IsNullOrEmpty(month))
+            if (!string.IsNullOrEmpty(Request["month"]))
             {
-                where += " and Month =" + month + "";
+                where += " and Month =" + Request["month"] + "";
             }
             //获取当前登录用户的部门
             SysUser suEnt = SysUser.Find(WebPortalService.CurrentUserInfo.UserID);

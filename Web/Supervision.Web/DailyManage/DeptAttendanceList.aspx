@@ -9,122 +9,138 @@
     <script src="../Extjs42/bootstrap.js" type="text/javascript"></script>
     <script src="../js/pan.js" type="text/javascript"></script>
     <script type="text/javascript">
-        var grid, store;
+        var grid, store, pgbar;
         Ext.onReady(function () {
-            Ext.regModel("KaoQi", { fields: ["Id", "BelongDeptName", "BelongDeptId", "Remark", "BelongDeptId", "Year", "Month", "Status"] });
-            store = new Ext.data.JsonStore({
-                model: 'KaoQi',
-                proxy: {
-                    type: 'ajax',
-                    url: "DeptAttendanceList.aspx?action=async",
-                    reader: {
-                        reader: "json",
-                        root: 'rows',
-                        totalProperty: "pageCount"
-                    }
-                },
-                pageSize: 25,
-                autoLoad: { start: 0, limit: 25 }
-            });
-            var store_year = Ext.create('Ext.data.JsonStore', {
-                fields: ['year'],
-                proxy: {
-                    type: 'ajax',
-                    url: 'DeptAttendanceList.aspx?action=loadyear',
-                    reader: {
-                        root: 'rows',
-                        type: 'json'
-                    }
-                },
-                autoLoad: true
-            })
-            var yearcombo = new Ext.form.ComboBox({
-                fieldLabel: '所属年份',
-                labelAlign: 'right',
-                labelWidth: 60,
-                width: 150,
-                store: store_year,
-                queryMode: 'local',
-                displayField: 'year',
-                valueField: 'year'
-            });
-            var store_month = Ext.create('Ext.data.JsonStore', {
-                fields: ['month'],
-                proxy: {
-                    type: 'ajax',
-                    url: 'DeptAttendanceList.aspx?action=loadmonth',
-                    reader: {
-                        root: 'rows',
-                        type: 'json'
-                    }
-                },
-                autoLoad: true
-            })
-            var monthcombo = new Ext.form.ComboBox({
-                fieldLabel: '所属月份',
-                labelWidth: 60,
-                width: 150,
-                labelAlign: 'right',
-                store: store_month,
-                queryMode: 'local',
-                displayField: 'month',
-                valueField: 'month'
-            });
-            var toolbar = Ext.create("Ext.toolbar.Toolbar", {
-                items: [yearcombo, monthcombo,
-                    { xtype: 'textfield', fieldLabel: '部门名称', labelWidth: 60, id: 'DeptName' },
-                    {
-                        text: "查询", handler: function () {
-                            var DeptName = Ext.getCmp("DeptName").getValue();
-                            var json = { DeptName: DeptName, year: yearcombo.getValue(), month: monthcombo.getValue() };
-                            store.reload({ params: json });
-                        }
-                    }, '-',
-                //{
-                //    text: "添加", handler: function () {
-                //        opencenterwin("DeptAttendanceCard.aspx", 1300, 500);
-                //    }
-                //    }, '-',
-                    {
-                        text: "修改", handler: function () {
-                            var recs = grid.getSelectionModel().getSelection();
-                            if (!recs || recs.length <= 0) {
-                                Ext.Msg.alert("提示", "请选择修改的记录!");
-                                return;
+            Ext.Ajax.request({
+                url: "DeptAttendanceList.aspx?action=basedata",
+                success: function (response, opts) {
+                    var json = Ext.decode(response.responseText);
+                    var store_year = Ext.create('Ext.data.JsonStore', {
+                        fields: ['year'],
+                        data: json.year
+                    })
+                    var yearcombo = new Ext.form.ComboBox({
+                        fieldLabel: '所属年份',
+                        id: 'yearcombo',
+                        labelAlign: 'right',
+                        labelWidth: 60,
+                        width: 150,
+                        store: store_year,
+                        editable: false,
+                        queryMode: 'local',
+                        displayField: 'year',
+                        valueField: 'year'
+                    });
+                    var store_month = Ext.create('Ext.data.JsonStore', {
+                        fields: ['month'],
+                        data: json.month
+                    })
+
+                    var monthcombo = new Ext.form.ComboBox({
+                        fieldLabel: '所属月份',
+                        id: 'monthcombo',
+                        labelWidth: 60,
+                        width: 150,
+                        labelAlign: 'right',
+                        store: store_month,
+                        editable: false,
+                        queryMode: 'local',
+                        displayField: 'month',
+                        valueField: 'month'
+                    });
+                    var store_dept = Ext.create('Ext.data.JsonStore', {
+                        fields: ['GroupID', 'Name'],
+                        data: json.dept
+                    })
+                    var deptcombo = new Ext.form.ComboBox({
+                        fieldLabel: '部门名称',
+                        id: 'deptcombo',
+                        editable: false,
+                        labelWidth: 60,
+                        width: 250,
+                        labelAlign: 'right',
+                        store: store_dept,
+                        queryMode: 'local',
+                        displayField: 'Name',
+                        valueField: 'GroupID'
+                    });
+                    var toolbar = Ext.create("Ext.toolbar.Toolbar", {
+                        items: [yearcombo, monthcombo, deptcombo,
+                            {
+                                text: "查询", handler: function () {
+                                    pgbar.moveFirst();
+                                }
+                            }, '-',
+                        {
+                            text: "重置", handler: function () {
+                                Ext.getCmp('yearcombo').setValue('');
+                                Ext.getCmp("monthcombo").setValue('');
+                                Ext.getCmp('deptcombo').setValue('');
                             }
-                            opencenterwin("DeptAttendanceCard.aspx?id=" + recs[0].get("Id"), '1300', '650');
+                        }, '-',
+                            {
+                                text: "修改", handler: function () {
+                                    var recs = grid.getSelectionModel().getSelection();
+                                    if (!recs || recs.length <= 0) {
+                                        Ext.Msg.alert("提示", "请选择修改的记录!");
+                                        return;
+                                    }
+                                    opencenterwin("DeptAttendanceCard.aspx?id=" + recs[0].get("Id"), '1300', '650');
+                                }
+                            }
+                        ]
+                    });
+                    Ext.regModel("KaoQi", { fields: ["Id", "BelongDeptName", "BelongDeptId", "Remark", "BelongDeptId", "Year", "Month", "Status"] });
+                    store = new Ext.data.JsonStore({
+                        model: 'KaoQi',
+                        proxy: {
+                            type: 'ajax',
+                            url: "DeptAttendanceList.aspx?action=async",
+                            reader: {
+                                reader: "json",
+                                root: 'rows',
+                                totalProperty: "pageCount"
+                            }
+                        },
+                        pageSize: 25,
+                        autoLoad: true,
+                        listeners: {
+                            beforeload: function () {
+                                store.getProxy().extraParams = {
+                                    year: Ext.getCmp('yearcombo').getValue(),
+                                    month: Ext.getCmp("monthcombo").getValue(),
+                                    deptid: Ext.getCmp('deptcombo').getValue()
+                                }
+                            }
                         }
-                    }
-                ]
-            });
-            grid = Ext.create("Ext.grid.Panel", {
-                store: store,
-                region: "center",
-                title: '部门考勤',
-                tbar: toolbar,
-                selModel: { selType: "checkboxmodel" },
-                columns: [
-                    { xtype: 'rownumberer', width: 60 },
-                    { header: "标示", dataIndex: "Id", hidden: true },
-                    { header: "年", dataIndex: "Year", width: 100 },
-                    { header: "月", dataIndex: "Month", width: 100 },
-                    { header: "所属部门", dataIndex: "BelongDeptName", width: 200 },
-                    { header: '备注', dataIndex: 'Remark', flex: 1 }
-                ],
-                bbar: {
-                    xtype: 'pagingtoolbar',
-                    displayMsg: '显示 {0} - {1} 条，共计 {2} 条',
-                    emptyMsg: "没有数据",
-                    beforePageText: "当前页",
-                    afterPageText: "共{0}页",
-                    store: store,
-                    displayInfo: true
+                    });
+                    pgbar = Ext.create('Ext.toolbar.Paging', {
+                        displayMsg: '显示 {0} - {1} 条,共计 {2} 条',
+                        store: store,
+                        displayInfo: true
+                    })
+                    grid = Ext.create("Ext.grid.Panel", {
+                        store: store,
+                        region: "center",
+                        title: '部门考勤',
+                        tbar: toolbar,
+                        selModel: { selType: "checkboxmodel" },
+                        columns: [
+                            { xtype: 'rownumberer', width: 60 },
+                            { header: "标示", dataIndex: "Id", hidden: true },
+                            { header: "年", dataIndex: "Year", width: 100 },
+                            { header: "月", dataIndex: "Month", width: 100 },
+                            { header: "所属部门", dataIndex: "BelongDeptName", width: 200 },
+                            { header: '备注', dataIndex: 'Remark', flex: 1 }
+                        ],
+                        bbar: pgbar
+                    });
+                    var viewport = new Ext.Viewport({
+                        layout: 'border',
+                        items: [grid]
+                    });
                 }
-            });
-            var viewport = new Ext.Viewport({
-                layout: 'border',
-                items: [grid]
-            });
+            })
         })
         function RowRender(value, cellmeta, record, rowIndex, columnIndex, store) {
             var rtn = "";
